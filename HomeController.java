@@ -1,5 +1,6 @@
 package com.niit.shoppingcart.config.config;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,18 +13,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shoppingcart.dao.LoginDAO;
+import com.niit.shoppingcart.dao.SupplierDAO;
 import com.niit.shoppingcart.dao.UserDetailsDAO;
 import com.niit.shoppingcart.model.Login;
-import com.niit.shoppingcart.model.Login;
+import com.niit.shoppingcart.model.Supplier;
 import com.niit.shoppingcart.model.UserDetails;
 
 @Controller
 public class HomeController 
 {
 	@Autowired
-	private UserDetailsDAO ud;
+	UserDetailsDAO ud;
 	@Autowired
-	private LoginDAO ld;
+	LoginDAO ld;
+	@Autowired
+	SupplierDAO sd;
 	@RequestMapping("/")
 	public ModelAndView home()
 	{
@@ -32,17 +36,36 @@ public class HomeController
 	}
 	
 	@RequestMapping("Register")
-	public ModelAndView register()
+	public ModelAndView regi()
 	{
 		ModelAndView m1=new ModelAndView("Register");
 		return m1;
 	}
+	@RequestMapping("Login")
+	public ModelAndView dis()
+	{
+		ModelAndView m1=new ModelAndView("Login");
+		return m1;
+	}
 	@ModelAttribute("UserDetails")
-	public UserDetails registerUser() {
+	public UserDetails registerUser() 
+	{
 		return new UserDetails();
 
 	}
+	@ModelAttribute("Supplier")
+	public Supplier dream() 
+	{
+		return new Supplier();
+
+	}
 	
+	@RequestMapping("/addSupplier")
+	public ModelAndView display3() {
+
+		ModelAndView mv3 = new ModelAndView("addSupplier");
+		return mv3;
+	}
 	@RequestMapping(value = "storeUser", method = RequestMethod.POST)
 	public String addUser(@Valid @ModelAttribute("UserDetails") UserDetails registeruser,BindingResult result) {
 		if (result.hasErrors()) {
@@ -65,11 +88,23 @@ public class HomeController
     }
     
     @RequestMapping("/checkuser")
-    public ModelAndView chackedUser(@Valid @ModelAttribute("user")Login user,BindingResult result,@RequestParam("userName") String userName,@RequestParam("password")String password) 
+    public ModelAndView chackedUser(@Valid @ModelAttribute("Login")Login user,BindingResult result,@RequestParam("userName") String userName,@RequestParam("password")String password) 
     { 
     	System.out.println("UserName is............."+userName);
     	System.out.println("Password is............."+password);
+		return null;
     	
     }
+    @RequestMapping("storesupplier")
+	public String addBook(HttpServletRequest request, @Valid @ModelAttribute("Supplier") Supplier supplier,
+			BindingResult result) {
+		if (result.hasErrors()) {
+			return "addSupplier";
+		}
+		sd.save(supplier);
+		return "addSupplier";
+
+	}
+	}
+
 	
-}
