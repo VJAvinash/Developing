@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <html lang="en">
 <head>
-  <title>OnlineShoppingCart</title>
+  <title>Headphones.com</title>
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,11 +15,11 @@
   border-color:#FFFFFF
   color: #FFFFFF; 
   }
-  .navbar-default .navbar-brand{
+  .navbar-default .navbar-header{
   color:#FFFFFF
   }
-  .navbar-default .navbar-brand:hover,
-  .navbar-default .navbar-brand:focus{
+  .navbar-default .navbar-header:hover,
+  .navbar-default .navbar-header:focus{
     color:#18BC9C;
     background-color: transparent;
     }
@@ -44,66 +44,63 @@
         background-color:#1A242F;
         color:#FFFFFF;
         } 
+        .navbar-default{
+         font-face:Gadget;
+        font-size:17px;
+        }
+        
+        .navbar-default{
+        position:absoulute;
+        top:0;
+        width:100%;
+        }
   
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: 50%;
+      width: 100%;
       margin: auto;
   }
   </style>
 </head>
-<body>
-
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-
-  <div class="container-fluid">
-  
-    <div class="navbar-header">
-    <a class="navbar-brand" href="home"><font size="5"> HeadPhonesCart</font></a>
+<body>       
+       <nav class="navbar navbar-default" role="navigation">
+         <div class="container-fluid">
+         <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" date-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+         <span class = "icon-bar"></span>
+         <span class = "icon-bar"></span>
+         <span class = "icon-bar"></span>
+         </button>        
+      
+       <h1 class="navbar-header" href="Home">
+       <font size=6 face="courier"><span class="glyphicon glyphicon-headphones">Headphones.com®</font></h1>
        </div>
-       <p>
-<div class="input-group col-lg-4">
-    <input type="text" class="form-control" placeholder="Enter The Search Terms Here"/>
-    <span class="input-group-btn">
-    <button class="btn btn-primary" type="button">Search</button>
-    </span>  
-    </div>
-    </p>
-   <div class="navbar-collapse collapse"></div> 
-     <ul class="nav navbar-nav navbar-right">
-      <li class="active"><a href="#">Home</a></li>
-            <li><a href="">Contact us</a></li>
-               <li><a href="">ViewAll</a></li>  
-                            
-       <li><a href="Register"><span class="glyphicon glyphicon-log-in"></span> SignUp</a></li>
-       <li class="dropdown">
-       <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>Login<b
-        class="caret"></b></a>
-        <ul class="dropdown-menu">
-        <li class ="dropdown-header">Login Details</li>
-        <li><a href="#">Admin</a></li>
-                <li class="divider"></li>        
-         <li><a href="#">User</a></li>  
-        <li>
+        <div class="navbar-collapse collapse"> 
+        
+        <div class="nav navbar-nav navbar-right">
+        <li class="active"><a href="Home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+         <li><a href="ManageProducts"><span class="glyphicon glyphicon-bell"></span> Products</a></li>        
+        <li><a href="Contact"><span class="glyphicon glyphicon-phone-alt"></span> Contact Us</a></li>          
+        <li ><a href="Register"><span class="glyphicon glyphicon-log-in"></span> SignUp</a></li>
+        <li ><a href="Login"><span class="glyphicon glyphicon-user"></span> Login</a></li>    
      </ul>
-  </div>
- 
-  
+     
+     </div>
+     </div>
+     </div>
+   </div> 
 </nav>
-  
-
-<div class="container">
-  
-    <div class="center-block">  
-    
-  <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+       <div class="container">  
+       <div class="center-block">    
+       <br> 
+       <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
+       <ol class="carousel-indicators">
+       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+       <li data-target="#myCarousel" data-slide-to="1"></li>
+       <li data-target="#myCarousel" data-slide-to="2"></li>
+       <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
     
    <!-- Wrapper for slides -->
@@ -115,20 +112,20 @@
     
     
       <div class="item active">
-         <img src="<c:url value="/resources/images/Avi3.jpg"/>" alt="Chania" style="width:10000px; height=300px">
+         <img src="<c:url value="/resources/images/A1.jpg"/>" alt="Chania" style="width:10000px; height=100px">
       </div>
 
       <div class="item">
-        <img src="<c:url value="/resources/images/Avi2.jpg"/>" alt="Chania" style="width:10000px; height=300px">
+        <img src="<c:url value="/resources/images/A2.jpg"/>" alt="Chania" style="width:10000px; height=100px">
       </div>
     
       <div class="item">
-        <img src="<c:url value="/resources/images/Avi1.jpg"/>" alt="Chania" style="width:10000px; height=300px"> 
+        <img src="<c:url value="/resources/images/A3.jpg"/>" alt="Chania" style="width:10000px; height=100px"> 
       </div>
       
       
        <div class="item">
-         <img src="<c:url value="/resources/images/Avi4.jpg"/>" alt="Chania" style="width:10000px; height=300px">
+         <img src="<c:url value="/resources/images/A4.jpg"/>" alt="Chania" style="width:10000px; height=100px">
       </div>
       
           <!-- Left and right controls -->
@@ -148,18 +145,18 @@
             
   <div class="row">
     <div class="col-sm-4">
-      <a href="enter">
+       <a href="ManageProducts">
           
-         <img src="<c:url value="/resources/images/Avi5.jpg"/>" alt="Pulpit Rock" style="width:300px;height:150px">
+         <img src="<c:url value="/resources/images/A5.jpg"/>" alt="Pulpit Rock" style="width:300px;height:150px">
              </div>
     <div class="col-sm-4">
-           
-         <img src="<c:url value="/resources/images/Avi6.jpg"/>" alt="Moustiers Sainte Marie" style="width:300px;height:150px">
+           <a href="ManageProducts"> 
+         <img src="<c:url value="/resources/images/A6.jpg"/>" alt="Moustiers Sainte Marie" style="width:300px;height:150px">
          
     </div>
     <div class="col-sm-4">
-      <a href="enter pro?data=table">
-           <img src="<c:url value="/resources/images/Avi7.jpg"/>" alt="Cinque Terre" style="width:300px;height:150px">
+      <a href="ManageProducts">
+           <img src="<c:url value="/resources/images/A7.jpg"/>" alt="Cinque Terre" style="width:300px;height:150px">
       </a>
     </div>
   </div>
@@ -169,12 +166,13 @@ $(".carousel").carousel({
 	interval:1400
 })
 </script>
-<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+<br><br><br>
+<nav class="navbar navbar-inverse navbar-bottom" role="navigation">
   <div class ="container">
   <div class="navbar-text pull-left">
-  <p>� 2016 Headphones Store.</p>
+  <p>© 2016 All Rights Reserved.</p>
   </div>
   </div>
-  </div>
+  </nav>
 </body>
 </html>
