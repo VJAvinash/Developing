@@ -34,6 +34,12 @@ public class HomeController
 		ModelAndView m1=new ModelAndView("Home");
 		return m1;
 	}
+	@RequestMapping("Home")
+	public ModelAndView home1()
+	{
+		ModelAndView m1=new ModelAndView("Home");
+		return m1;
+	}
 	
 	@RequestMapping("Register")
 	public ModelAndView regi()
@@ -70,7 +76,7 @@ public class HomeController
 	public String addUser(@Valid @ModelAttribute("UserDetails") UserDetails registeruser,BindingResult result) {
 		if (result.hasErrors()) {
 			System.out.println("Errors");
-			return "register";
+			return "Register";
 		}
 		System.out.println(registeruser.getUsername());
 		ud.save(registeruser);
@@ -80,7 +86,7 @@ public class HomeController
 		loginuser.setPassword(registeruser.getPassword());
 		loginuser.setStatus(registeruser.isStatus());
 		ld.save(loginuser);
-		return "register";
+		return "Register";
 	}
     @ModelAttribute("Login")
     public Login createuser(){
@@ -99,11 +105,23 @@ public class HomeController
 	public String addBook(HttpServletRequest request, @Valid @ModelAttribute("Supplier") Supplier supplier,
 			BindingResult result) {
 		if (result.hasErrors()) {
-			return "addSupplier";
+			return "addsupplier";
 		}
 		sd.save(supplier);
 		return "addSupplier";
 
+	}
+    @RequestMapping("/Admin")
+    public ModelAndView disp() {
+
+		ModelAndView mv3 = new ModelAndView("Admin");
+		return mv3;
+	}
+    @RequestMapping("Contact")
+    public ModelAndView dispo() {
+
+		ModelAndView mv13 = new ModelAndView("Contact");
+		return mv13;
 	}
 	}
 
